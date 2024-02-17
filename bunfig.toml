@@ -1,0 +1,8 @@
+[test]
+
+# always enable coverage
+coverage = true
+coverageThreshold = { line = 1, function = 1, statement = 1 }
+coverageSkipTestFiles = false
+root = "./__tests__"
+smol = false
