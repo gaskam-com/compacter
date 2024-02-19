@@ -1,10 +1,10 @@
 import { expect, test, describe } from "bun:test";
 import { rewrite } from ".";
 
-const input = await Bun.file("test/src/index.html").text();
+const input = "index.html";
 describe("Test html minifier function", () => {
   test("Expect minified to be smaller than original", async () => {
-    expect((await rewrite(input)).length).toBeLessThan(input.length);
+    expect((await rewrite(input)).length).toBeLessThan((await Bun.file("test/src/" + input).text()).length);
   });
 
   test("2 * 2", () => {
